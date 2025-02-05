@@ -203,7 +203,7 @@ Widget smallContainerSecond() {
   ));
 }*/
 
-void main() {
+/*void main() {
   runApp(MyApp());
 }
 
@@ -398,6 +398,332 @@ Widget blueContainerBottom() {
           )
         ],
       ),
+    ),
+  );
+}
+*/
+
+void main() {
+  runApp(WhatsApp());
+}
+
+class WhatsApp extends StatelessWidget {
+  const WhatsApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          toolbarHeight: 90,
+          backgroundColor: const Color(0xFF008069),
+          leading: Icon(
+            Icons.arrow_back,
+            color: Colors.white,
+          ),
+          title: Text(
+            "Title Here",
+            style: TextStyle(color: Colors.white),
+          ),
+          actions: [
+            Icon(
+              Icons.search,
+              color: Colors.white,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 12),
+              child: Icon(
+                Icons.sort,
+                color: Colors.white,
+              ),
+            )
+          ],
+        ),
+        body: chat(),
+      ),
+    );
+  }
+}
+
+Widget chat() {
+  return Padding(
+    padding: const EdgeInsets.only(top: 10),
+    child: Column(
+      spacing: 15,
+      children: [
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.check,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.check,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.add,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.check,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.check,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.add,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.add,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+        ListTile(
+          leading: CircleAvatar(
+            backgroundImage: NetworkImage(
+                'https://images.pexels.com/photos/30326244/pexels-photo-30326244/free-photo-of-classic-car-driving-through-snowy-mountain-landscape.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'),
+            radius: 30,
+          ),
+          title: Row(
+            spacing: 6,
+            children: [
+              Text(
+                "Name",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+              Icon(
+                Icons.verified,
+                color: Colors.green,
+              )
+            ],
+          ),
+          subtitle: Text(
+            "subtitle",
+            style: TextStyle(
+              fontSize: 17,
+            ),
+            maxLines: 1,
+          ),
+          trailing: Icon(
+            Icons.add,
+            color: Color(0xFF008069),
+            size: 27,
+          ),
+        ),
+      ],
     ),
   );
 }

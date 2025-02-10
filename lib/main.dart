@@ -828,112 +828,116 @@ void main() {
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xfffeeed5),
+        backgroundColor: const Color(0xfffeeed5),
         appBar: AppBar(
           toolbarHeight: 70,
           titleSpacing: 30,
           leading: Center(
             child: Container(
-                padding: EdgeInsets.all(8),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(10),
-                    color: const Color.fromARGB(174, 249, 246, 238)),
-                child: Icon(Icons.arrow_back_ios_new)),
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: const Color.fromARGB(174, 249, 246, 238),
+              ),
+              child: const Icon(Icons.arrow_back_ios_new),
+            ),
           ),
-          backgroundColor: Color(0xFFfeeed5),
-          title: Text(
+          backgroundColor: const Color(0xFFfeeed5),
+          title: const Text(
             "Product Details",
             style: TextStyle(fontSize: 30, fontWeight: FontWeight.w600),
           ),
         ),
         body: Column(
+          spacing: 10,
           children: [
             Padding(
               padding: const EdgeInsets.all(10),
-              child: Expanded(
+              child: SizedBox(
+                height: 300,
                 child: Image.asset(
-                    height: 300,
-                    "assets/images/—Pngtree—modern minimalist wooden sideboard light_20358017.png"),
+                  "assets/images/—Pngtree—modern minimalist wooden sideboard light_20358017.png",
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
             Expanded(
               child: Container(
-                // height: double.infinity,
-                // width: double.infinity,
-                decoration: BoxDecoration(color: Color(0xfffef9e6)),
+                decoration: const BoxDecoration(color: Color(0xfffef9e6)),
                 child: Padding(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                   child: Column(
-                    spacing: 15,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Column(
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text(
-                                "Plant Wood Cupboard",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  fontSize: 25,
-                                ),
-                              ),
-                              Text(
-                                "\$129",
-                                style: TextStyle(
-                                    fontSize: 25, fontWeight: FontWeight.w500),
-                              )
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("alksdjfalkj"),
-                              Spacer(),
-                              Icon(
-                                Icons.star,
-                                color: Colors.amber,
-                              ),
-                              Text("4.6")
-                            ],
-                          ),
-                        ],
-                      ),
-                      Column(
-                        spacing: 8,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
                           Text(
-                            "Description",
+                            "Plant Wood Cupboard",
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w600),
+                              fontWeight: FontWeight.w600,
+                              fontSize: 25,
+                            ),
                           ),
                           Text(
-                            "a;slkdfjaslkfdja;sldkfja;sldkfjas;ldkfjasl;dkfjsal;kdfj;asldkfjasl;dkfj;asldkfjasl;kdfj;alskdfj;asldkfj;aslkdfj;aslkdfj;lsakdfj;aslkdfj;alsdkfj;aslkdfj;aslkdfj;alskdfj;asldkfj;alsdkfja;sldkfj;laskdfj;aslkdfj;aslkdfja;lsdkfj;salkdfj;laskdfj;laskdfj;aslkdfj",
-                            maxLines: 7,
+                            "₹129",
+                            style: TextStyle(
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500,
+                            ),
                           )
                         ],
                       ),
+                      const SizedBox(height: 8),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: const [
+                          Text("Wooden Furniture"),
+                          Spacer(),
+                          Icon(Icons.star, color: Colors.amber),
+                          Text("4.6  (950+)")
+                        ],
+                      ),
+                      const SizedBox(height: 20),
+                      const Text(
+                        "Description",
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Text(
+                        "This is a beautifully crafted wooden cupboard with a minimalist design. It offers ample storage space and fits perfectly in modern home settings. This is a beautifully crafted wooden cupboard with a minimalist design. It offers ample storage space and fits perfectly in modern home settings.This is a beautifully crafted wooden cupboard with a minimalist design. It offers ample storage space and fits perfectly in modern home settings.",
+                        maxLines: 7,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                      const Spacer(),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            "\$129",
+                          const Text(
+                            "₹129",
                             style: TextStyle(
-                                fontSize: 30, fontWeight: FontWeight.w600),
+                              fontSize: 30,
+                              fontWeight: FontWeight.w600,
+                            ),
                           ),
                           Container(
                             height: 50,
                             width: 90,
-                            decoration: BoxDecoration(color: Color(0xfffac97a)),
-                            child: Center(
+                            decoration: BoxDecoration(
+                              color: const Color(0xfffac97a),
+                              borderRadius: BorderRadius.circular(10),
+                            ),
+                            child: const Center(
                               child: Text(
                                 "Buy Now",
                                 style: TextStyle(fontWeight: FontWeight.w900),
@@ -941,7 +945,7 @@ class ProductDetails extends StatelessWidget {
                             ),
                           )
                         ],
-                      )
+                      ),
                     ],
                   ),
                 ),
@@ -953,6 +957,3 @@ class ProductDetails extends StatelessWidget {
     );
   }
 }
-
-
-class 

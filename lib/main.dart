@@ -822,7 +822,7 @@ secondary fef9e63
 textbox fac97a
 */
 
-void main() {
+/*void main() {
   runApp(ProductDetails());
 }
 
@@ -956,4 +956,61 @@ class ProductDetails extends StatelessWidget {
       ),
     );
   }
+}*/
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(body: gridViewSample()),
+    );
+  }
+}
+
+Widget gridViewSample() {
+  return GridView.builder(
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+    itemBuilder: (context, index) {
+      int row = index ~/ 8;
+      int column = index % 8;
+      Color? cellColor;
+      if ((row + column) % 2 == 0) {
+        cellColor = Colors.black;
+      } else {
+        cellColor = Colors.white;
+      }
+      return Container(
+        color: cellColor,
+      );
+    },
+  );
+}
+
+Widget gridviewSampletwo() {
+  return GridView.count(
+    crossAxisCount: 5,
+    children: [
+      Container(
+        color: Colors.amber,
+      ),
+      Container(
+        color: Colors.black,
+      ),
+      Container(
+        color: Colors.blue,
+      ),
+      Container(
+        color: Colors.red,
+      ),
+      Container(
+        color: Colors.green,
+      ),
+    ],
+  );
 }

@@ -958,7 +958,7 @@ class ProductDetails extends StatelessWidget {
   }
 }*/
 
-void main() {
+/*void main() {
   runApp(MyApp());
 }
 
@@ -975,24 +975,16 @@ class MyApp extends StatelessWidget {
 
 Widget gridViewSample() {
   return GridView.builder(
-    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
+    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 7),
     itemBuilder: (context, index) {
-      int row = index ~/ 8;
-      int column = index % 8;
-      Color? cellColor;
-      if ((row + column) % 2 == 0) {
-        cellColor = Colors.black;
-      } else {
-        cellColor = Colors.white;
-      }
       return Container(
-        color: cellColor,
+        color: index.isEven ? Colors.black : Colors.white,
       );
     },
   );
-}
+}*/
 
-Widget gridviewSampletwo() {
+/*Widget gridviewSampletwo() {
   return GridView.count(
     crossAxisCount: 5,
     children: [
@@ -1013,4 +1005,183 @@ Widget gridviewSampletwo() {
       ),
     ],
   );
+}*/
+
+/*int row = index ~/ 8;
+      int column = index % 8;
+      Color? cellColor;
+      if ((row + column) % 2 == 0) {
+        cellColor = Colors.black;
+      } else {
+        cellColor = Colors.white;
+      }
+      return Container(
+        color: cellColor,
+      );*/
+
+/*void main() {
+  runApp(InstagramUi());
+}
+
+class InstagramUi extends StatelessWidget {
+  const InstagramUi({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        extendBodyBehindAppBar: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          elevation: 0,
+          title: Text(
+            'Reels',
+            style: TextStyle(color: Colors.black),
+          ),
+          centerTitle: false,
+          actions: [
+            Padding(
+              padding: const EdgeInsets.only(right: 20),
+              child: Icon(Icons.photo_camera),
+            )
+          ],
+        ),
+        body: ReelsUi(),
+      ),
+    );
+  }
+}
+
+class ReelsUi extends StatelessWidget {
+  const ReelsUi({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return PageView.builder(
+      scrollDirection: Axis.vertical,
+      itemCount: 5,
+      itemBuilder: (context, index) {
+        return Stack(
+          children: [
+            Container(
+              color: index % 2 == 0 ? Colors.amber : Colors.blueAccent,
+              child: Center(
+                child: Text(
+                  'Reel ${index + 1}',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 20,
+              right: 10,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  _iconWithText(Icons.favorite, '1.2k'),
+                  SizedBox(height: 15),
+                  _iconWithText(Icons.comment, '245'),
+                  SizedBox(height: 15),
+                  _iconWithText(Icons.send, 'Share'),
+                  SizedBox(height: 15),
+                  _iconWithText(Icons.more_vert, ''),
+                ],
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  Widget _iconWithText(IconData icon, String text) {
+    return Column(
+      children: [
+        Icon(icon, color: Colors.white, size: 30),
+        if (text.isNotEmpty) SizedBox(height: 5),
+        if (text.isNotEmpty)
+          Text(
+            text,
+            style: TextStyle(color: Colors.white, fontSize: 12),
+          ),
+      ],
+    );
+  }
+}
+*/
+
+import 'dart:math';
+
+void main() {
+  runApp(DiceApp());
+}
+
+class DiceApp extends StatelessWidget {
+  const DiceApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        body: DiceControl(
+          diceRoll: [
+            "assets/images/d1.jpg",
+            "assets/images/d2.png",
+            "assets/images/d3.png",
+            "assets/images/d4.png",
+            "assets/images/d5.png",
+            "assets/images/d6.png",
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DiceControl extends StatefulWidget {
+  final List<String> diceRoll;
+
+  const DiceControl({super.key, required this.diceRoll});
+
+  @override
+  State<DiceControl> createState() => _DiceControlState();
+}
+
+class _DiceControlState extends State<DiceControl> {
+  String _currentDiceImage = "";
+  final Random _random = Random();
+  @override
+  void initState() {
+    super.initState();
+    _currentDiceImage = widget.diceRoll[0]; // Default to first image
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
+          child: Image.asset(_currentDiceImage),
+        ),
+        SizedBox(
+          width: 200,
+          height: 200,
+          child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  int randomIndex = _random.nextInt(6);
+                  _currentDiceImage = widget.diceRoll[randomIndex];
+                });
+              },
+              child: Image.asset("assets/images/button.png")),
+        ),
+      ],
+    );
+  }
 }

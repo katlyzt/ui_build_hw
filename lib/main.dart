@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ui_build_hw/view/clothing_store/initial_page/initial_page.dart';
 
 /*void main() {
   runApp(MyApp());
@@ -1113,9 +1114,7 @@ class ReelsUi extends StatelessWidget {
 }
 */
 
-import 'dart:math';
-
-void main() {
+/*void main() {
   runApp(DiceApp());
 }
 
@@ -1152,7 +1151,7 @@ class DiceControl extends StatefulWidget {
 }
 
 class _DiceControlState extends State<DiceControl> {
-  String _currentDiceImage = "";
+  String? _currentDiceImage;
   final Random _random = Random();
   @override
   void initState() {
@@ -1167,7 +1166,7 @@ class _DiceControlState extends State<DiceControl> {
       children: [
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20),
-          child: Image.asset(_currentDiceImage),
+          child: Image.asset(_currentDiceImage!),
         ),
         SizedBox(
           width: 200,
@@ -1182,6 +1181,23 @@ class _DiceControlState extends State<DiceControl> {
               child: Image.asset("assets/images/button.png")),
         ),
       ],
+    );
+  }
+}
+*/
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: InitialPage(),
     );
   }
 }

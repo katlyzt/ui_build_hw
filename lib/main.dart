@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ui_build_hw/view/clothing_store/initial_page/initial_page.dart';
+import 'package:ui_build_hw/view/login_ui/home_screen/home_screen.dart';
 
 /*void main() {
   runApp(MyApp());
@@ -1197,7 +1198,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: InitialPage(),
+      home: HomeScreen(),
     );
   }
 }

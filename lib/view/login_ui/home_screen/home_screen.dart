@@ -108,7 +108,7 @@ Widget loginUi(BuildContext context, GlobalKey<FormState> loginKey,
               onPressed: () {
                 if (loginKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
+                    const SnackBar(content: Text("Processing Data")),
                   );
                 }
               },
